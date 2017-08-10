@@ -114,14 +114,15 @@ public class TechJobs {
             //for (HashMap.Entry<String, String> entry : job.entrySet()) {
             //for (String key : job) {
             Iterator<Map.Entry<Integer, String>> iterator = job.entrySet().iterator();
+            System.out.printf("%n*****%n"); //top decoration
             while(iterator.hasNext()){
                 Map.Entry<Integer, String> entry = iterator.next();
-                System.out.printf("Key : %s , Value: %s %n", entry.getKey(), entry.getValue());
 
-
+                System.out.printf("%s: %s %n", entry.getKey(), entry.getValue());
 
             }
+            System.out.printf("*****%n"); // bottom decoration
         }
-        System.out.println("printJobs is not implemented yet");
+        //System.out.println("printJobs is not implemented yet");
     }
 }
