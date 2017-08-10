@@ -7,9 +7,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -83,6 +81,45 @@ public class JobData {
 
         return jobs;
     }
+
+    public static ArrayList<HashMap<String, String>> findByValue(String searchTerm, String value) {
+
+        // load data, if not already loaded
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> job : allJobs) {
+
+            Iterator<Map.Entry<String, String>> iterator = job.entrySet().iterator();
+
+            while (iterator.hasNext()) {
+                Map.Entry<String, String> entry = iterator.next();
+
+                if ((entry.getKey()) == (entry.getValue())) { //if searchTerm = value
+                    jobs.add(job);
+                    break; //end the loop so it doesnt display dups
+                }
+            }
+
+//            if (searchTerm )
+//
+//            for (String val: job.values()) {
+//                //System.out.println("key : " + key);
+//                if (val == searchTerm) {
+//                    jobs.put(job);
+//                }
+//
+//            String aValue = job.get(value);
+//
+//            if (aValue.contains(value)) { // if
+//            }
+        }
+        return jobs;
+
+    }
+
+
 
     /**
      * Read in data from a CSV file and store it in a list
