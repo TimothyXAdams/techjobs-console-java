@@ -109,12 +109,19 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
+        //If no jobs found, print message
+        if (someJobs.size() < 1) {
+            System.out.printf("%nSorry, no jobs found.%n%n");
+        }
+
         for (HashMap job : someJobs) { //Iterate over someJobs, one job at a time
 
             //for (HashMap.Entry<String, String> entry : job.entrySet()) {
             //for (String key : job) {
             Iterator<Map.Entry<Integer, String>> iterator = job.entrySet().iterator();
             System.out.printf("%n*****%n"); //top decoration
+
+
             while(iterator.hasNext()){
                 Map.Entry<Integer, String> entry = iterator.next();
 
