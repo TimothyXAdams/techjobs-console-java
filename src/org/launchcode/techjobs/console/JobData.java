@@ -78,7 +78,7 @@ public class JobData {
                 jobs.add(row);
             }
         }
-
+        System.out.println("Your search returned " + jobs.size() + " results.");
         return jobs;
     }
 
@@ -96,37 +96,15 @@ public class JobData {
                 //System.out.println(entry.getValue() + searchTerm);
                 //if (Objects.equals(entry.getValue(), searchTerm)) {
                 if (entry.getValue().toLowerCase().contains(searchTerm.toLowerCase())) {
-                    
+
                     jobs.add(job);
                     break; //end the loop so it doesn't display dups
                 }
             }
 
 
-//            Iterator<Map.Entry<String, String>> iterator = job.entrySet().iterator();
-//
-//            while (iterator.hasNext()) {
-//                Map.Entry<String, String> entry = iterator.next();
-//
-//                if ((entry.getKey()) == (entry.getValue())) { //if searchTerm = value
-//                    jobs.add(job);
-//                    break; //end the loop so it doesnt display dups
-//                }
-//            }
-//
-////            if (searchTerm )
-//
-//            for (String val: job.values()) {
-//                //System.out.println("key : " + key);
-//                if (val == searchTerm) {
-//                    jobs.put(job);
-//                }
-//
-//            String aValue = job.get(value);
-//
-//            if (aValue.contains(value)) { // if
-//            }
         }
+        System.out.println("Your search returned " + jobs.size() + " results.");
         return jobs;
 
     }
