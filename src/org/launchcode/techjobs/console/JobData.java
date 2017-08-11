@@ -82,27 +82,39 @@ public class JobData {
         return jobs;
     }
 
-    public static ArrayList<HashMap<String, String>> findByValue(String searchTerm, String value) {
+    public static ArrayList<HashMap<String, String>> findByValue(String searchTerm) {
 
         // load data, if not already loaded
         loadData();
 
+
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> job : allJobs) {
+        for (HashMap<String, String> job : allJobs) { //for each job
 
-            Iterator<Map.Entry<String, String>> iterator = job.entrySet().iterator();
-
-            while (iterator.hasNext()) {
-                Map.Entry<String, String> entry = iterator.next();
-
-                if ((entry.getKey()) == (entry.getValue())) { //if searchTerm = value
+            for(Map.Entry<String, String> entry : job.entrySet()){ //for each entry in job
+                //System.out.println(entry.getValue() + searchTerm);
+                //if (Objects.equals(entry.getValue(), searchTerm)) {
+                if (entry.getValue().toLowerCase().contains(searchTerm.toLowerCase())) {
+                    System.out.println("9977777777777777777777");
                     jobs.add(job);
-                    break; //end the loop so it doesnt display dups
+                    break; //end the loop so it doesn't display dups
                 }
             }
 
-//            if (searchTerm )
+
+//            Iterator<Map.Entry<String, String>> iterator = job.entrySet().iterator();
+//
+//            while (iterator.hasNext()) {
+//                Map.Entry<String, String> entry = iterator.next();
+//
+//                if ((entry.getKey()) == (entry.getValue())) { //if searchTerm = value
+//                    jobs.add(job);
+//                    break; //end the loop so it doesnt display dups
+//                }
+//            }
+//
+////            if (searchTerm )
 //
 //            for (String val: job.values()) {
 //                //System.out.println("key : " + key);
