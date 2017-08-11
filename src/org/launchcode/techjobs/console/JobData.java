@@ -96,7 +96,7 @@ public class JobData {
                 //System.out.println(entry.getValue() + searchTerm);
                 //if (Objects.equals(entry.getValue(), searchTerm)) {
                 if (entry.getValue().toLowerCase().contains(searchTerm.toLowerCase())) {
-                    System.out.println("9977777777777777777777");
+                    
                     jobs.add(job);
                     break; //end the loop so it doesn't display dups
                 }
